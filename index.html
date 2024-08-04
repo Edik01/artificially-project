@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TensorFlow.js Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/@TensorFlow/tfjs"></script>
+</head>
+
+<body>
+    <h1>TensorFlow.js Example</h1>
+
+    <p>Hello word</p>
+
+    <script>
+        const model = tf.sequential();
+
+        model.add(tf.layers.dense({ units: 10, aktivation: 'relu', inputShape: [2] }));
+        model.add(tf.layers.dense({ units: 2, activation: 'softmax' }));
+
+        model.compile({
+            optimizer: 'adam',
+            loss: 'categoricalCrossentropy',
+            metrics: ['accuracy']
+        });
+
+        const xs = tf.tensor2d([
+            [0, 0], [0, 1], [1, 0], [1, 1]
+        ]);
+
+        const ys = tf.tensor2d([
+            [1, 0], [0, 1], [0, 1], [1, 0]
+        ]);
+
+        model.fit(xs, ys, {
+            epochs: 100
+        }).then(
+            () => {
+                model.predict(tf.tensor2d([[0, 0], [1, 1]])).print();
+            }
+        )
+
+    </script>
+</body>
+
+</html>
