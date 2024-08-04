@@ -1,0 +1,17 @@
+{
+  "name": "artificially-project",
+  "version": "1.0.0",
+  "description": "A simple project using TensorFlow.js",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server -c-1"
+  },
+  "author": "Edik01",
+  "license": "MIT",
+  "dependencies": {
+    "@tensorflow/tfjs": "^4.0.0"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
