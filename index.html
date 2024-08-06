@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TensorFlow.js Example</title>
+    <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/@TensorFlow/tfjs"></script>
 </head>
 
@@ -12,6 +13,10 @@
     <h1>TensorFlow.js Example</h1>
 
     <p>Hello word</p>
+
+    <button onclick="changeMessage()">click me</button>
+
+    <input type="Login">
 
     <script>
         const model = tf.sequential();
@@ -42,6 +47,8 @@
         )
 
     </script>
+    <script src="script.js"></script>
+
 </body>
 
 </html>
