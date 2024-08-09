@@ -6,22 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TensorFlow.js Example</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/@TensorFlow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
 </head>
 
 <body>
     <h1>Artificial project</h1>
 
-    <p>Hello word</p>
+    <p id="message">Hello world</p> <!-- Добавлен id="message" -->
 
-    <button onclick="changeMessage()">click me</button>
+    <button onclick="changeMessage()">Click me</button>
 
-    <input type="Login">
+    <input type="text" placeholder="Login">
+
+    <script src="script.js"></script>
 
     <script>
         const model = tf.sequential();
 
-        model.add(tf.layers.dense({ units: 10, aktivation: 'relu', inputShape: [2] }));
+        model.add(tf.layers.dense({ units: 10, activation: 'relu', inputShape: [2] }));
         model.add(tf.layers.dense({ units: 2, activation: 'softmax' }));
 
         model.compile({
@@ -44,11 +46,9 @@
             () => {
                 model.predict(tf.tensor2d([[0, 0], [1, 1]])).print();
             }
-        )
+        );
 
     </script>
-    <script src="script.js"></script>
-
 </body>
 
 </html>

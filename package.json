@@ -8,10 +8,12 @@
   },
   "author": "Edik01",
   "license": "MIT",
-  "dependencies": {
-    "@tensorflow/tfjs": "^4.0.0"
-  },
   "devDependencies": {
-    "http-server": "^14.1.1"
+    "@types/node": "^22.2.0",
+    "http-server": "^14.1.1",
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "@tensorflow/tfjs": "^4.20.0"
   }
 }
