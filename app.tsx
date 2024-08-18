@@ -11,5 +11,11 @@ const App: React.FC = () => {
   };
   const handleSpeedChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSpeed(Number(event.target.value));
+
+    return (
+      <div style={{ textAlign: "center", marginTop: "50px" }}>
+        <h1>Drone Control Panel</h1>
+      </div>
+    );
   };
 };
