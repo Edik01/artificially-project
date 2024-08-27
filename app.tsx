@@ -15,6 +15,16 @@ const App: React.FC = () => {
     return (
       <div style={{ textAlign: "center", marginTop: "50px" }}>
         <h1>Drone Control Panel</h1>
+        <div>
+          <label>Speed: {speed}</label>
+          <input
+            type="range"
+            min="1"
+            max="10"
+            value={speed}
+            onChange={handleSpeedChange}
+          />
+        </div>
       </div>
     );
   };
