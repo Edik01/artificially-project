@@ -6,3 +6,8 @@ document.addEventListener("DOMContentLoaded", function () {
 function changeMessage() {
   document.getElementById("message").textContent = "You clicked the button";
 }
+
+function dronControl() {
+  document.getElementById("control").managementContent =
+    "You can controlled drone";
+}
