@@ -29,3 +29,47 @@ button {
   font-size: 1em;
   cursor: pointer;
 }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.background-image {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Высота равна высоте окна браузера */
+  background-image: url("image.png"); /* Укажите путь к изображению */
+  background-size: cover; /* Масштабировать изображение, чтобы оно покрывало весь экран */
+  background-position: center; /* Центрировать изображение */
+  color: white; /* Цвет текста */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Вертикально выравнивает текст */
+  align-items: center; /* Горизонтально выравнивает текст */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Тень для текста */
+}
+
+h1 {
+  font-size: 3em;
+  margin: 0;
+}
+
+p {
+  font-size: 1.5em;
+  margin: 10px 0;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
