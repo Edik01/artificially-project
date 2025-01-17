@@ -13,7 +13,6 @@ html {
   justify-content: center;
   align-items: center;
   color: white;
-  text-shadow: 1px 1px 2px black;
 }
 
 h1 {
@@ -48,28 +47,52 @@ body {
   justify-content: center; /* Вертикально выравнивает текст */
   align-items: center; /* Горизонтально выравнивает текст */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Тень для текста */
-}
 
-h1 {
-  font-size: 3em;
-  margin: 0;
-}
+  h1 {
+    font-size: 3em;
+    margin: 0;
+  }
 
-p {
-  font-size: 1.5em;
-  margin: 10px 0;
-}
+  p {
+    font-size: 1.5em;
+    margin: 10px 0;
+  }
 
-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
 
-button:hover {
-  background-color: #45a049;
+  button:hover {
+    background-color: #45a049;
+  }
+
+  .side-menu {
+    position: absolute;
+    top: 50%;
+    left: 20px; /* Расположить сбоку */
+    transform: translateY(-50%);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding: 10px;
+  }
+
+  .side-menu li {
+    margin: 10px 0;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+  }
+
+  .side-menu li:hover {
+    text-decoration: underline;
+  }
 }
