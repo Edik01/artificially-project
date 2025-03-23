@@ -1,24 +1,30 @@
 import { getWeather } from "./api.js";
 
-// Ждём, пока HTML полностью загрузится
 document.addEventListener("DOMContentLoaded", () => {
-  const fetchWeatherButton = document.getElementById("fetchWeather");
   const cityInput = document.getElementById("cityInput");
+  const fetchWeatherButton = document.getElementById("fetchWeather");
   const output = document.getElementById("output");
 
   if (fetchWeatherButton && cityInput && output) {
     fetchWeatherButton.addEventListener("click", async () => {
       const city = cityInput.value;
       try {
-        const weatherData = await getWeather(city);
-        output.innerText = `Погода в ${city}: ${weatherData.main.temp}°C, ${weatherData.weather[0].description}`;
-      } catch (error) {
-        output.innerText = "Ошибка при получении данных.";
+        const data = await getWeather(city);
+        output.innerText = `Погода в ${city}: ${data.main.temp}°C, ${data.weather[0].description}`;
+      } catch (err) {
+        output.innerText = "Ошибка при получении погоды.";
       }
     });
   }
 
-  // Кнопка перехода на страницу faithing
+  const messageButton = document.getElementById("messageButton");
+  const message = document.getElementById("message");
+  if (messageButton && message) {
+    messageButton.addEventListener("click", () => {
+      message.textContent = "Вы нажали кнопку!";
+    });
+  }
+
   const faithingButton = document.getElementById("faithingButton");
   if (faithingButton) {
     faithingButton.addEventListener("click", () => {
@@ -26,20 +32,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Кнопка возврата на главную
   const backToHomeButton = document.getElementById("backToHomeButton");
   if (backToHomeButton) {
     backToHomeButton.addEventListener("click", () => {
       window.location.href = "index.html";
-    });
-  }
-
-  // Пример изменения текста при нажатии
-  const messageButton = document.getElementById("messageButton");
-  const message = document.getElementById("message");
-  if (messageButton && message) {
-    messageButton.addEventListener("click", () => {
-      message.textContent = "Вы нажали на кнопку!";
     });
   }
 });

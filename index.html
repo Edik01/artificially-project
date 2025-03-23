@@ -2,75 +2,30 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TensorFlow.js Example</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Artificially Project</title>
+    <link rel="stylesheet" href="styles.css" />
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
 </head>
 
-<body>
-    <div>
-        <input type="text" id="cityInput" placeholder="Введите город" />
-        <button id="fetchWeather">Получить погоду</button>
-        <div id="output"></div>
-    </div>
-    <div class="background">
-        <h1>Artificial project</h1>
+<body class="body">
+    <h1>Главная страница проекта</h1>
 
-        <p id="message">Hello world</p> <!-- Добавлен id="message" -->
-
-        <button onclick="changeMessage()">Click me</button>
-
-        <input type="text" placeholder="Login">
-
-        <ul id="Dron instruction">Dron istruction</ul>
-        <li>Player</li>
-        <tr>Faithing</tr>
-        <button id="faithingButton">Click for Faithing</button>
-
-        <button id="fetchWeather">Получить погоду</button>
-        <input id="cityInput" />
-        <div id="output"></div>
-
-        <button id="faithingButton">Перейти к Faithing</button>
-        <button id="messageButton">Нажми на меня</button>
-        <p id="message">Привет!</p>
-
-    </div>
+    <h2>Погода</h2>
+    <input type="text" id="cityInput" placeholder="Введите город" />
+    <button id="fetchWeather">Получить погоду</button>
+    <div id="output"></div>
 
 
-    <script src="script.js"></script>
+    <h2>Навигация</h2>
+    <button id="faithingButton">Перейти к Faithing</button>
 
-    <script>
-        const model = tf.sequential();
+    <h2>Сообщение</h2>
+    <p id="message">Привет!</p>
+    <button id="messageButton">Нажми на меня</button>
 
-        model.add(tf.layers.dense({ units: 10, activation: 'relu', inputShape: [2] }));
-        model.add(tf.layers.dense({ units: 2, activation: 'softmax' }));
-
-        model.compile({
-            optimizer: 'adam',
-            loss: 'categoricalCrossentropy',
-            metrics: ['accuracy']
-        });
-
-        const xs = tf.tensor2d([
-            [0, 0], [0, 1], [1, 0], [1, 1]
-        ]);
-
-        const ys = tf.tensor2d([
-            [1, 0], [0, 1], [0, 1], [1, 0]
-        ]);
-
-        model.fit(xs, ys, {
-            epochs: 100
-        }).then(
-            () => {
-                model.predict(tf.tensor2d([[0, 0], [1, 1]])).print();
-            }
-        );
-
-    </script>
+    <script type="module" src="script.js"></script>
 </body>
 
 </html>
