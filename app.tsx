@@ -1,31 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
-const App: React.FC = () => {
-  const [direction, setDirection] = useState<string>("None");
+function DroneEnemyDetection() {
+  const [predictions, setPredictions] = useState<string[]>([]);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
-  const [speed, setSpeed] = useState<number>(1);
+  const armyCod = "secret123";
+  const access = "secret123";
 
-  const handleDirectionChange = (newDirection: string) => {
-    setDirection(newDirection);
-    console.log(`Drone moving ${newDirection}`);
-  };
-  const handleSpeedChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSpeed(Number(event.target.value));
+  const login = armyCod;
+  if (login === access) {
+    console.log("you have access cod");
+  } else {
+    console.log("Your access cod incomplete");
+  }
 
-    return (
-      <div style={{ textAlign: "center", marginTop: "50px" }}>
-        <h1>Drone Control Panel</h1>
-        <div>
-          <label>Speed: {speed}</label>
-          <input
-            type="range"
-            min="1"
-            max="10"
-            value={speed}
-            onChange={handleSpeedChange}
-          />
-        </div>
-      </div>
-    );
-  };
-};
+  return <div>Drone Enemy Detection Page</div>;
+}
+
+export default DroneEnemyDetection;

@@ -1,14 +1,20 @@
 import React, { useState, useRef } from "react";
-import * as mobilenet from "@tensorflow-models/mobilenet";
-import "@tensorflow/tfjs";
 
-const DroneEnemyDetection: React.FC = () => {
+function DroneEnemyDetection() {
   const [predictions, setPredictions] = useState<string[]>([]);
   const videoRef = useRef<HTMLVideoElement>(null);
-  let login = armyCod;
-  if (armyCod >= access) {
-    console.log("you have access cod.");
+
+  const armyCod = "secret123"; // пока просто так
+  const access = "secret123";
+
+  const login = armyCod;
+  if (login === access) {
+    console.log("you have access cod");
   } else {
     console.log("Your access cod incomplete");
   }
-};
+
+  return <div>Drone Enemy Detection</div>;
+}
+
+export default DroneEnemyDetection;
