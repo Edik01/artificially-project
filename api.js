@@ -1,4 +1,4 @@
-const API_KEY = "your_api_key_here"; // ← вставь свой ключ OpenWeatherMap
+const API_KEY = "fef9a7cade8ebaf536dda87676ea2bb3"; // ← вставь свой ключ OpenWeatherMap
 const BASE_URL = "https://api.openweathermap.org/data/2.5";
 
 export async function getWeather(city) {

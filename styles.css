@@ -1,106 +1,76 @@
-drone-image {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100px; /* Ширина дрона */
-  height: auto; /* Автоматическая высота */
-}
-body,
-html {
+/* Обнуляем отступы и задаем общие стили */
+* {
   margin: 0;
   padding: 0;
-  height: 100%;
+  box-sizing: border-box;
 }
+.drone-image {
+  width: 100%; /* Растягиваем на всю ширину */
+  height: auto; /* Сохраняем пропорции */
+  display: block; /* Убираем отступы у <img> */
+}
+.background-image {
+  background-image: url("image.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
-.background {
-  background: url("image.png") no-repeat center/cover;
-  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: white;
+  text-align: center;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
-
-h1 {
-  font-size: 3em;
-}
-
-p {
-  font-size: 1.5em;
-}
-
-button {
-  padding: 10px 20px;
-  font-size: 1em;
-  cursor: pointer;
-}
-
-body {
-  margin: 0;
+body,
+html {
+  height: 100%;
   font-family: Arial, sans-serif;
+  background-color: #0044cc; /* Синий фон всей страницы */
+  color: white;
 }
 
-.background-image {
-  position: relative;
-  width: 100%;
-  height: 100vh; /* Высота равна высоте окна браузера */
-  background-image: url("image.png"); /* Укажите путь к изображению */
-  background-size: cover; /* Масштабировать изображение, чтобы оно покрывало весь экран */
-  background-position: center; /* Центрировать изображение */
-  color: white; /* Цвет текста */
+/* Центрируем контент по центру экрана */
+.page-container {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Вертикально выравнивает текст */
-  align-items: center; /* Горизонтально выравнивает текст */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Тень для текста */
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 50px;
+  min-height: 100vh;
+}
 
-  h1 {
-    font-size: 3em;
-    margin: 0;
-  }
+/* Заголовок */
+h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
 
-  p {
-    font-size: 1.5em;
-    margin: 10px 0;
-  }
+/* Обычный текст */
+p {
+  font-size: 1.5em;
+  text-align: center;
+  max-width: 800px;
+  margin-bottom: 30px;
+}
 
-  button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
+/* Кнопка */
+button {
+  padding: 12px 25px;
+  font-size: 1em;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
-  button:hover {
-    background-color: #45a049;
-  }
-
-  .side-menu {
-    position: absolute;
-    top: 50%;
-    left: 20px; /* Расположить сбоку */
-    transform: translateY(-50%);
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 5px;
-    padding: 10px;
-  }
-
-  .side-menu li {
-    margin: 10px 0;
-    font-size: 18px;
-    color: white;
-    cursor: pointer;
-  }
-
-  .side-menu li:hover {
-    text-decoration: underline;
-  }
+button:hover {
+  background-color: #45a049;
 }
